@@ -109,147 +109,32 @@ They all have the same fill, or they have three different fill.
 
 */
 
-function checkInsanity (nums, colors, shapes, fill) {
-    if (fill == true){
-        if ( shapes true) {
-            if (colors  ==true){
-                if (nums ==true || nums ==false) {
-                    console.log("set")
-                } else {
-                    console.log("no set")
-                }
-            } else {
-                console.log("no Set");
-            }
-        } else {
-            console.log("no Set");
-          }
-    } else {
-        console.log("no Set");
-    }
-}
-function checkset (nums, colors, shapes, fill) {
-	if (this.checknums || !this.checkNumbers) {
-	} if (this.checkColors) {
-		if (this.checkShapes) {
-			if(this.checkFill) {
-				console.log('set');
-			}
-		}
-	}
-	else {
-		console.log("not set");
-	}
-	// if (this.checkColors || !this.checkNumbers){
-	// 	if (this.checkNums) {
-	// 		if (this.checkShapes) {
-	// 			if(this.checkFill) {
-	// 				console.log('set');
-	// 			}
-	// 		}
-	// 	}
-	// }
-	// else {
-	// 	console.log("not set");
-	// }
-	// if (this.checkShapes || !this.checkNumbers){
-	// 	if (this.checkNums) {
-	// 		if (this.checkShapes) {
-	// 			if(this.checkFill) {
-	// 				console.log('set');
-	// 			}
-	// 		}
-	// 	}
-	// }
-	// else {
-	// 	console.log("not set");
-	// }
+// card object instances
+/*
+	cardFour = new Card(cards.card4.cardNum, 
+						cards.card4.shape, 
+						cards.card4.fill,
+						cards.card4.shapeNum,
+						cards.card4.color
+					);
 
-}
-
-checkSet: function checkSet (s,c,f,n) {
-		var shape = (s == true) ? "set": "not set";
-		console.log("")
-		return shape;
-
-		var color = (c == true) ? "set" : "not set";
-		return color;
-		var fill = (f == true) ? "set" : "not set";
-		return fill;
-		var number = (n == true) ? "set" : "not set";
-		return number;
-	}
+	cardFive = new Card(cards.card5.cardNum, 
+						cards.card5.shape, 
+						cards.card5.fill,
+						cards.card5.shapeNum,
+						cards.card5.color
+					);
+	cardSix = new Card(cards.card6.cardNum, 
+						cards.card6.shape,
+						cards.card6.fill,
+						cards.card6.shapeNum,
+						cards.card6.color
+					);
+*/
 
 
-function checkSet() {
-	// check if set
-	// this shits gunna be hard
 
-	if (cardOne.color != cardTwo.color != cardThree.color || cardOne.color == cardTwo.color == cardThree.color) {
-		// colors are ok
-	} else if (cardOne.shape != cardTwo.shape != cardThree.shape || cardOne.shape == cardTwo.shape == cardThree.shape ){
-		// shapes are ok
-	} else if (cardOne.number != cardTwo.number != cardThree.number || cardOne.number == cardTwo.number == cardThree.number ){
-		// numbers are ok
-	} else if (cardOne.fill != cardTwo.fill != cardThree.fill || cardOne.fill == cardTwo.fill == cardThree.fill ){
-		// fill are ok
-	}
-}
 
-function checkColors(cardTwo, cardThree) {
-	if (this.color != cardTwo.color && this.color != cardThree.color) {}
-		console.log("the colors are different");
-		return true;
-	} else if (this.color != cardTwo.color && this.color != cardThree.color) {
-		console.log("the colors are the same");
-		return true;
-	} else {
-		// if two are similar, and one is different, it cannot be a set;
-		console.log("cant be set");
-		return false;
-	}
-}
-
-function checkNumbers (cardTwo, cardThree) {
-	if (this.number != cardTwo.number && this.number != cardThree.number) {
-		console.log("the numbers are different");
-		return true;
-	} else if (this.shapeNum == cardThree.shapeNum) {
-		console.log("the numbers are the same");
-		return true;
-	} else {
-		console.log("cant be set");
-		return false;
-	}
-}
-
-function checkShapes (cardTwo, cardThree) {
-	if (this.number != cardTwo.number && this.number != cardThree.number) {
-		console.log("the numbers are different");
-		return true;
-	} else if (this.shapeNum == cardThree.shapeNum) {
-		console.log("the numbers are the same") 
-		return true;
-	} else {
-		console.log("cant be set");
-		return false;
-	}
-
-}
-
-function checkFill (cardTwo, cardThree) {
-	if (this.fill != cardTwo.fill && this.fill != cardThree.fill) {
-		console.log("the numbers are different");
-		return true;
-	} else if (this.fill == cardThree.fill && this.fill == cardThree.fill) {
-		console.log("the numbers are the same") 
-		return true;
-	} else {
-		console.log("cant be set");
-		return false;
-	}
-
-}
 
 
 
@@ -276,56 +161,31 @@ function deal () {
 // prob use SASS bc this is a great opportunity
 
 
-/*CSS shapes 
-.triangle {
-	float: none;
-	margin: 0 auto;
-	width: 0;
-	height: 0;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	// want to abstract color out
-	border-bottom: 100px solid $blue;
-}
+// CSS shapes 
 
-.circle{
-	float: none;
-	margin: 0 auto;
-	width: 100px;
-	height: 100px;
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-	// want to abstract color out
-	background: $green;
-}
+// BINDING DATA
+function bindData (cardDom, cardObj){
+		cardDom.data = cardObj;
+	}
 
-.square {
-	float: none;
-	margin: 0 auto;
-	width: 100px;
-	height: 100px;
-	// want to abstract color out
-	// define as mixin and @include
-	background: $red;
-}
+	// bind Card Obj Instance info to HTML el
+	bindData($card1, cards.card1);
+	// console.log(cards.card1.shape);
+	
+	// console.log(cardsArray[0].shape);
+	
+	// bindData($card2, cardTwo);
+	console.log($card1.data) //logs ok
+	// console.log($card2.data)
 
-@mixin triangle {
-	float: none;
-	margin: 0 auto;
-	width: 0;
-	height: 0;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	border-bottom: 100px solid $blue;
-}
+	// retrieve Card Obj data from html
+	$card1.on("click", function () {
+		console.log($card1.data);
+		// test = this.children[0].dataset('card');
+	})
 
-@mixin triangle-color($color) {
-	border-bottom: 100px solid $color;
-
-}
-
-*/
+	// $card1.data = cards.card1;
+	// console.log($card1.data);
 
 _____________________
 questions

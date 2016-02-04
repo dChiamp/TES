@@ -1,46 +1,28 @@
-var cardsArray = [ 
-		{
-		cardNum: 1,
-		shape: "square",
-		fill: "solid-red",
-		shapeNum: 1,
-		color: "red"
-		},
-		{
-		cardNum: 2,
-		shape: "parallelogram" ,
-		fill: "solid-blue",
-		shapeNum: 1,
-		color: "blue"
-		}
-	]
-
-
-
-
-
 var cards = {
 	card1: {
-		cardNum: 1,
+		cardNum: "card1",
 		shape: "square",
 		fill: "solid-red",
 		shapeNum: 1,
 		color: "red"
 	},
 	card2: {
-		cardNum: 2,
+		cardNum: "card2",
 		shape: "parallelogram" ,
 		fill: "solid-blue",
 		shapeNum: 1,
 		color: "blue"
 	},
 	card3: {
-		cardNum: 3,
+		cardNum: "card3",
 		shape: "circle" ,
 		fill: "solid-green",
 		shapeNum: 1,
 		color: "green"
-	},
+	}
+}
+/* ,
+
 	card4: {
 		cardNum: 4,
 		shape: "circle" ,
@@ -85,3 +67,4 @@ var cards = {
 	}
 
 }
+*/
