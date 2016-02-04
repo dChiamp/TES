@@ -1,0 +1,209 @@
+// color variables:
+$red: #FF2B00;
+$blue: #00D5FF;
+$green: #55FF00;
+$selected: grey;
+
+// shape classes
+// want to apply color classes to each shape
+// other options: make classes for each color and fill
+// ex: red square solid, red square empty, red square striped
+// red triangle solid, red triangle empty, red triangle striped
+// red circle solid, red circle empty, red circle striped
+
+// shape mixins
+@mixin square {
+	float: none;
+	margin: 10% auto;
+	width: 100px;
+	height: 100px;
+}
+
+@mixin circle {
+
+	float: none;
+	margin: 10% auto;
+	width: 100px;
+	height: 100px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+
+}
+
+@mixin parallelogram {
+	margin-left: 20%;
+	margin-top:10%;
+	width: 120px;
+	height: 70px;
+	-webkit-transform: skew(20deg);
+	   -moz-transform: skew(20deg);
+	     -o-transform: skew(20deg);
+}
+
+// fill mixins
+@mixin solid ($color) {
+	background: $color;
+}
+
+// @mixin solid-red {
+// 	background: $red;
+// }
+
+
+@mixin empty($color) {
+	background: #FFF;
+	border: 10px solid $color;
+}
+
+@mixin stripes($color) {
+	background: $color;
+	background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
+	background-size: 10px 10px;
+}
+
+
+body {
+	font-family: Helvetica;
+	background: lightgrey;
+	text-align: center;
+}
+
+h1 {
+	margin-bottom: 100px;
+}
+
+// .col-xs-4 {
+// 	float: none;
+// 	margin: 0 auto;
+// 	background: $red;
+// }
+
+.row {
+	// background: $blue;
+}
+
+.card {
+	height: 300px;
+	width: 200px;
+	border: 1px solid black;
+	border-radius: 10px;
+	text-align: center;
+	background-color: white;
+	margin-bottom: 25px;
+}
+
+// color classes 
+	
+
+// classes
+// shapes
+.square {
+	@include square;
+}
+
+.circle {
+	@include circle;
+}
+
+.parallelogram {
+	@include parallelogram;
+}
+
+// fills
+
+// how to dynamically include colors?
+// .solid-red {
+// 	@include solid-red;
+// }
+
+.stripes-red{
+	@include stripes ($red);	
+}
+
+.stripes-blue {
+	@include stripes ($blue);
+}
+
+.stripes-green {
+	@include stripes ($green);
+}
+
+// solids
+
+.solid-red {
+	@include solid ($red);	
+}
+
+.solid-blue {
+	@include solid ($blue);
+}
+
+.solid-green {
+	@include solid ($green);
+}
+
+// empties
+
+.empty-red {
+	@include empty ($red);	
+}
+
+.empty-blue {
+	@include empty ($blue);	
+}
+
+.empty-green {
+	@include empty ($green);	
+}
+
+
+
+// .empty {
+// 	.red{
+// 		@include empty ($red);	
+// 	}
+// 	.blue {
+// 		@include empty ($blue);
+// 	}
+// 	.green {
+// 		@include empty ($green);
+// 	}
+// }
+
+// .red {
+// 	background: $red;
+// }
+
+// .green {
+// 	background: $green;
+// }
+
+// .blue {
+// 	background: $blue;
+// }
+
+// colors
+// .triangle-color{
+// 	@include triangle-color($blue);
+// }
+
+
+
+
+
+// change card color when selected
+.selected {
+	background: $selected;
+}
+
+// .color
+
+// .shape
+
+// .fill
+
+// .number, probs need to write a function
+
+
+

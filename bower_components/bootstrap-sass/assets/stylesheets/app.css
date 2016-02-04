@@ -1,0 +1,81 @@
+body {
+  font-family: Helvetica;
+  background: lightgrey;
+  text-align: center; }
+
+h1 {
+  margin-bottom: 100px; }
+
+.card {
+  height: 300px;
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  background-color: white;
+  margin-bottom: 25px; }
+
+.square {
+  float: none;
+  margin: 10% auto;
+  width: 100px;
+  height: 100px; }
+
+.circle {
+  float: none;
+  margin: 10% auto;
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px; }
+
+.parallelogram {
+  margin-left: 20%;
+  margin-top: 10%;
+  width: 120px;
+  height: 70px;
+  -webkit-transform: skew(20deg);
+  -moz-transform: skew(20deg);
+  -o-transform: skew(20deg); }
+
+.stripes-red {
+  background: #FF2B00;
+  background-image: linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.5) 50%);
+  background-size: 10px 10px; }
+
+.stripes-blue {
+  background: #00D5FF;
+  background-image: linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.5) 50%);
+  background-size: 10px 10px; }
+
+.stripes-green {
+  background: #55FF00;
+  background-image: linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.5) 50%);
+  background-size: 10px 10px; }
+
+.solid-red {
+  background: #FF2B00; }
+
+.solid-blue {
+  background: #00D5FF; }
+
+.solid-green {
+  background: #55FF00; }
+
+.empty-red {
+  background: #FFF;
+  border: 10px solid #FF2B00; }
+
+.empty-blue {
+  background: #FFF;
+  border: 10px solid #00D5FF; }
+
+.empty-green {
+  background: #FFF;
+  border: 10px solid #55FF00; }
+
+.selected {
+  background: grey; }
+
+/*# sourceMappingURL=app.css.map */
