@@ -14,13 +14,13 @@ $(document).ready(function() {
 		// addShape: function addShape (shape) {
 		// 	this.class(shape);
 		// },
-		displayCard: function displayCard () {
+		displayCard: function () {
 			console.log(this.shape);
 			console.log(this.fill);
 			console.log(this.color);
 			console.log(this.number);
 		},
-		checkShapes: function checkShape (cardTwo, cardThree) {
+		checkShape: function (cardTwo, cardThree) {
 			if (this.shape != cardTwo.shape && this.shape != cardThree.shape) {
 				console.log("the shapes are all different");
 				return true;
@@ -32,7 +32,7 @@ $(document).ready(function() {
 				return false;
 			}
 		},
-		checkFill: function checkFill(cardTwo, cardThree) {
+		checkFill: function (cardTwo, cardThree) {
 			if (this.fill != cardTwo.fill && this.fill != cardThree.fill) {
 				console.log("the fills are all different");
 				return true;
@@ -44,7 +44,7 @@ $(document).ready(function() {
 				return false;
 			}
 		},
-		checkColor: function checkColor(cardTwo, cardThree) {
+		checkColor: function (cardTwo, cardThree) {
 			if (this.color != cardTwo.color && this.color != cardThree.color) {
 				console.log("the colors are all different");
 				return true;
@@ -56,7 +56,7 @@ $(document).ready(function() {
 				return false;
 			}
 		},
-		checkNumber: function checkNumber(cardTwo, cardThree) {
+		checkNumber: function (cardTwo, cardThree) {
 			if (this.number != cardTwo.number && this.number != cardThree.number) {
 				console.log("the numbers are all different");
 				return true;
@@ -68,7 +68,7 @@ $(document).ready(function() {
 				return false;
 			}
 		},
-		checkSet: function checkSet (shape,fill,color,number) {
+		checkSet: function  (shape,fill,color,number) {
 		    if (shape == true && fill == true && color == true && number == true){
                 console.log("set!!!")
                 return true;
@@ -90,6 +90,11 @@ $(document).ready(function() {
 
 	// var cardOne = new Card(1, "square", "solid", 1, "red");
 	// create a foreach function?
+
+
+
+
+	
 
 	cardOne = new Card(cards.card1.cardNum, 
 						cards.card1.shape, 
@@ -132,32 +137,32 @@ $(document).ready(function() {
 						cards.card6.color
 					);
 
+
+	// function readDomCard (Obj){
+	// 	for (var key in Obj) {
+	// 		console.log(Obj[key]);
+	// 	};
+	// }
+	// readDomCard(cards.card1);
+
 	cardOne.checkWin(
 		cardOne.checkSet(
-			cardOne.checkShapes(cardTwo, cardThree),
+			cardOne.checkShape(cardTwo, cardThree),
 			cardOne.checkFill(cardTwo, cardThree),
 			cardOne.checkNumber(cardTwo, cardThree),
 			cardOne.checkColor(cardTwo, cardThree)
 		)
 	);
 
-	var $select = $(".card"); 
-	var counter = 0;
-	// select card
-	// how check how many "selected" classes are on page?
-	$select.on("click", function() {
-		$(this).toggleClass("selected");
-		if (counter < 3) {
-			counter++;
-		} else {
-			counter = 1;
-		}
-		console.log(counter);
-	})
+	// DOM STUFF
 
-	var $card4 = $("#r2-c1");
-	var $card5 = $("#r2-c2");
-	var $card6 = $("#r2-c3");
+	// function Dom (card) {
+	// 	this.Card = Card
+	// }
+	// Dom.prototype = {
+	// 	createCard: function (){
+	// 	}
+	// }
 
 	function addCardNum (card, cardNum) {
 		card.addClass(cardNum);
@@ -178,64 +183,76 @@ $(document).ready(function() {
 	function addColor (card, color){
 		card.addClass(color);
 	}
+	// render cards on page
+	var $card1 = $("#r1-c1");
+	var $card2 = $("#r1-c2");
+	var $card3 = $("#r1-c3");
+	var $card4 = $("#r2-c1");
+	var $card5 = $("#r2-c2");
+	var $card6 = $("#r2-c3");
+	var $card7 = $("#r3-c1");
+	var $card8 = $("#r3-c2");
+	var $card9 = $("#r3-c3");
+	// maybe use these, need to add to protoype, but somehow use jquery also
 
-	// maybe use these, need to add to protoype
-	// but somehow use jquery also
-	
+	// render cards
+	addShape($card1, cardOne.shape);
+	addFill($card1, cardOne.fill);
+	addShape($card2, cardTwo.shape);
+	addFill($card2, cardTwo.fill);
+	addShape($card3, cardThree.shape);
+	addFill($card3, cardThree.fill);
 	addShape($card4, cardFour.shape);
-	addColor($card4, cardFour.color);
-	
+	addFill($card4, cardFour.fill);
 	addShape($card5, cardFive.shape);
-	addColor($card5, cardFive.color);
+	addFill($card5, cardFive.fill);
+	addShape($card6, cardSix.shape);
+	addFill($card6, cardSix.fill);
 
-	// addShape($card6, cardSix.shape);
-	// addColor($card6, cardSix.color);
-})
-
-var cards = {
-	card1: {
-		cardNum: 1,
-		shape: "square",
-		fill: "solid",
-		shapeNum: 1,
-		color: "red"
-	},
-	card2: {
-		cardNum: 2,
-		shape: "triangle" ,
-		fill: "solid",
-		shapeNum: 1,
-		color: "blue"
-	},
-	card3: {
-		cardNum: 3,
-		shape: "circle" ,
-		fill: "solid",
-		shapeNum: 1,
-		color: "green"
-	},
-	card4: {
-		cardNum: 4,
-		shape: "circle" ,
-		fill: "solid",
-		shapeNum: 3,
-		color: "red"
-	},
-	card5: {
-		cardNum: 5,
-		shape: "square" ,
-		fill: "solid",
-		shapeNum: 2,
-		color: "blue"
-	},
-	card6: {
-		cardNum: 6,
-		shape: "triangle",
-		fill: "solid",
-		shapeNum: 2,
-		color: "green"
+	function bindData (cardDom, cardObj){
+		cardDom.data = cardObj;
 	}
-}
+
+	// bind Card Obj Instance info to HTML el
+	bindData($card1, cardsArray[0]);
+	// console.log(cards.card1.shape);
+	
+
+	// console.log(cardsArray[0].shape);
+	
+	// bindData($card2, cardTwo);
+	console.log($card1.data) //logs ok
+	// console.log($card2.data)
+
+	// retrieve Card Obj data from html
+	$card1.on("click", function () {
+		console.log($card1.data);
+	})
+
+	// $card1.data = cards.card1;
+	// console.log($card1.data);
+
+	addShape($card6, cardSix.shape);
+	// addColor($card6, cardSix.color);
+
+	// select card
+	var $select = $(".card"); 
+	var counter = 0;
+	// how check how many "selected" classes are on page?
+	$select.on("click", function() {
+		console.log(this);
+		$(this).toggleClass("selected");
+		if (counter < 3) {
+			counter++;
+		} else {
+			counter = 1;
+		}
+		console.log(counter);
+		// $card1.checkShape($card2, $card3);
+	})
+	// compare 3 cards by clicking
+}) //jquery end
+
 
 // $.getScript("cards.js", function(data) {
 // 	console.log(data);
