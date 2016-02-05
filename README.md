@@ -20,23 +20,23 @@ Check out the rules below:
 To create a ~~game using OOP~~ complex but elegant game.
 
 ###Technologies Used
--HTML5
--CSS3
--Bootstrap
--SASS
--JavaScript
--JQUERY
+- HTML5
+- CSS3
+- Bootstrap
+- SASS
+- JavaScript
+- JQUERY
 
 ##Structure
--Data is in cards.js
--SASS files in bootstrap-sass/assets/stylesheets/
--Dom stuff in main.js
--Win logic in winLogic.js
+- Data is in cards.js
+- SASS files in bootstrap-sass/assets/stylesheets/
+- Dom stuff in main.js
+- Win logic in winLogic.js
 
 ####Coming Soon
--Another Dimension
--Multiplayer
--even **more** steez!
+- Another Dimension
+- Multiplayer
+- even **more** steez!
 
 
 
