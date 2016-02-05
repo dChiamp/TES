@@ -18,10 +18,9 @@ a {
   padding-right: 4%; }
 
 #reset-btn {
+  font-color: white;
   border-radius: 10px;
-  opacity: 0.4;
   margin: 2% 4% 2% 0;
-  color: white;
   background-color: lightblue;
   padding: 15px 32px;
   font-size: 32px; }

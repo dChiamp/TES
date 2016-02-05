@@ -13,7 +13,6 @@ $selected: grey;
 }
 
 @mixin circle {
-
 	float: none;
 	margin: 50% auto;
 	width: 100px;
@@ -21,7 +20,6 @@ $selected: grey;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
-
 }
 
 @mixin parallelogram {
@@ -51,23 +49,18 @@ $selected: grey;
 	background-size: 10px 10px;
 }
 
-
 body {
 	font-family: Helvetica;
 	background: lightgrey;
 	text-align: center;
 	background-image: url("../../../../space2.jpg");
-
-}
-
-header{
-
 }
 
 h1 {
 	text-align: center;
 	margin-top: 5%;
 	margin-right: 5%;
+	min-width: 5%;
 	font-size: 500%;
 	color:white;
 }
@@ -76,27 +69,19 @@ a {
 	text-align: center;
 	font-size: 36px;
 	padding-bottom: 5%;
-	padding-right: 4%
-}
-
-// .col-xs-4 {
-// 	float: none;
-// 	margin: 0 auto;
-// 	background: $red;
-// }
-
-.row {
-	// background: $blue;
+	padding-right: 4%;
+	min-width: 5%;
 }
 
 #reset-btn{
+	font-color: white;
 	border-radius: 10px;
-	opacity: 0.4;
+	// opacity: 0.4;
 	margin: 2% 4% 2% 0;
-	color:white;
 	background-color: lightblue;
 	padding: 15px 32px;
 	font-size: 32px;
+	min-width: 5%;
 }
 
 #reset-btn:hover {
@@ -172,7 +157,6 @@ a {
 .empty-green {
 	@include empty ($green);	
 }
-
 
 .selected {
 	background: $selected;

@@ -1,6 +1,0 @@
-As a user, I want play a stimulating game so i can pass the time and feel accomplished.
-
-
-As the creator, I want people to have access to a a fun game while improving my OOP programming skills.
-
-

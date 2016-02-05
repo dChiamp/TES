@@ -35,7 +35,6 @@ $(document).ready(function() {
 	}
 
 	function startGame() {
-
 		for (var key in cards) {
 			var nums = cards[key].cardNum;
 			cardNumValArray.push(nums);
@@ -53,7 +52,6 @@ $(document).ready(function() {
 		e.preventDefault();
 		location.reload();
 		startGame();
-
 	})
 
 	var $select = $(".card"); 
@@ -62,6 +60,7 @@ $(document).ready(function() {
 	//click on cards to compare	 
 	var counter = 0;
 	$select.on("click", function() {
+		// $(e.target).off()
 		// select card
 		$(this).toggleClass("selected");
 		$(this).addClass("clicked");
@@ -105,8 +104,6 @@ $(document).ready(function() {
 			cardSet = [];
 			console.clear();
 		}
-	
 	})
-
 }) //jquery end
 

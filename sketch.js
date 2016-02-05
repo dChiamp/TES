@@ -32,7 +32,6 @@ more shading
 
 center
 
-
 html disable attr
 	add clicked class
 
