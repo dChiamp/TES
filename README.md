@@ -3,7 +3,7 @@
 A variation of the classic puzzle card game.
 
 ## Getting Started
-Go to http://tescardgame.com to play!
+Go to http://tescardgame.bitballoon.com/ to play!
 
 Check out the rules below:
 
@@ -29,7 +29,7 @@ To create a ~~game using OOP~~ complex but elegant game.
 
 ##Structure
 - Data is in cards.js
-- SASS files in bootstrap-sass/assets/stylesheets/
+- SASS files in bower_components/bootstrap-sass/assets/stylesheets/
 - Dom stuff in main.js
 - Win logic in winLogic.js
 
