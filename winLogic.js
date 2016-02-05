@@ -33,7 +33,7 @@ function checkColor (color1, color2, color3) {
 			console.log("the colors are all the same");
 			return true;
 		} else {
-			console.log("cant be set, two colors are the same");
+			console.log("cant be a set, two colors are the same");
 			return false;
 		}
 }
@@ -51,11 +51,11 @@ function checkSet (shape,fill,color,number) {
 function checkWin (checkSet) {
 		if (checkSet == true) {
 			console.log("it's a fucking set!");
-			alert("it's a fucking set!");
+			alert("it's a set!");
 			return true;
 		} else {
 			console.log("not a set, you idiot");
-			alert("not a set, you idiot");
+			alert("not a set, try again :( ");
 			return false;
 		}
 	}

@@ -156,29 +156,29 @@ var cards = {
 	},
 	card24: {
 		cardNum: "card24",
-		shape: "square" ,
+		shape: "square",
 		fill: "solid-red",
 		shapeNum: 1,
 		color: "red"
 	},
 	card25: {
 		cardNum: "card25",
-		shape: "circle" ,
+		shape: "circle",
 		fill: "empty-green",
 		shapeNum: 1,
 		color: "green"
 	},
-	card27: {
-		cardNum: "card27",
+	card26: {
+		cardNum: "card26",
 		shape: "square",
 		fill: "solid-blue",
 		shapeNum: 1,
 		color: "blue"
 	},
-	card28: {
-		cardNum: "card28",
+	card27: {
+		cardNum: "card27",
 		shape: "circle" ,
-		fill: "stripe-blue",
+		fill: "stripes-blue",
 		shapeNum: 1,
 		color: "blue"
 	}

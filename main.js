@@ -1,18 +1,12 @@
 $(document).ready(function() { 
 	// DOM STUFF
 
-	// grab cards on page
-	var $card1 = $("#r1-c1"),
-		$card2 = $("#r1-c2"),
-		$card3 = $("#r1-c3"),
-		$card4 = $("#r2-c1"),
-		$card5 = $("#r2-c2"),
-		$card6 = $("#r2-c3"),
-		$card7 = $("#r3-c1"),
-		$card8 = $("#r3-c2"),
-		$card9 = $("#r3-c3");
+	// grab cards on page by ids
+	var $card1 = $("#r1-c1"), $card2 = $("#r1-c2"), $card3 = $("#r1-c3"),
+		$card4 = $("#r2-c1"), $card5 = $("#r2-c2"), $card6 = $("#r2-c3"),
+		$card7 = $("#r3-c1"), $card8 = $("#r3-c2"), $card9 = $("#r3-c3");
 
-	// render cards
+	// render cards and bind json data to DOM
 	function renderCard (cardEl, cardNum, shape, fill, shapeNum, color) {
 		cardEl.attr('data-card', cardNum);
 		cardEl.addClass(shape);
@@ -21,51 +15,59 @@ $(document).ready(function() {
 		cardEl.addClass(color);
 	}
 
-	//could also pull argurments from obj instead of instances
-	renderCard($card1, cardOne.cardNum, cardOne.shape, cardOne.fill, cardOne.color);
-	renderCard($card2, cardTwo.cardNum, cardTwo.shape, cardTwo.fill, cardTwo.color);
-	renderCard($card3, cardThree.cardNum, cardThree.shape, cardThree.fill, cardThree.color);
-	renderCard($card4, cardFour.cardNum, cardFour.shape, cardFour.fill, cardFour.color);
-	renderCard($card5, cardFive.cardNum, cardFive.shape, cardFive.fill, cardFive.color);
-	renderCard($card6, cardSix.cardNum, cardSix.shape, cardSix.fill, cardSix.color);
-	renderCard($card7, cardSeven.cardNum, cardSeven.shape, cardSeven.fill, cardSeven.color);
-	renderCard($card8, cardEight.cardNum, cardEight.shape, cardEight.fill, cardEight.color);
-	renderCard($card9, cardNine.cardNum, cardNine.shape, cardNine.fill, cardNine.color);
+	var boardSpotArr = [$card1, $card2, $card3, 
+						$card4, $card5, $card6, 
+						$card7, $card8, $card9];
 
-	// grab cards by id
-	var card1 = document.getElementById('r1-c1'),
-	    card2 = document.getElementById('r1-c2'),
-	    card3 = document.getElementById('r1-c3'),
-	    card4 = document.getElementById('r2-c1'),
-	    card5 = document.getElementById('r2-c2'),
-	    card6 = document.getElementById('r2-c3'),
-	    card7 = document.getElementById('r3-c1'),
-	    card8 = document.getElementById('r3-c2'),
-	    card9 = document.getElementById('r3-c3');
+	// to get length
+	var cardNumValArray = [];
+	
+	function dealNineCards () {
+		for (i=0; i<9; i++){
+			var rando = Math.floor(Math.random() * cardNumValArray.length);
+			console.log(rando);
+			var cardNumStr = cardNumValArray[rando];
+			var cardData = cards[cardNumStr];
 
-	 // grab cards data obj from html
- 	var card1Dom = cards[card1.dataset.card],
-		card2Dom = cards[card2.dataset.card],
-		card3Dom = cards[card3.dataset.card],
-		card4Dom = cards[card4.dataset.card],
-		card5Dom = cards[card5.dataset.card],
-		card6Dom = cards[card6.dataset.card],
-		card7Dom = cards[card7.dataset.card],
-		card8Dom = cards[card8.dataset.card],
-		card9Dom = cards[card9.dataset.card];
+			renderCard(boardSpotArr[i], cardData.cardNum, cardData.shape, 
+						cardData.fill, cardData.shapeNum, cardData.color);
+		}
+	}
 
-	// console.log(cards[card1.dataset.card]);
+	function startGame() {
+
+		for (var key in cards) {
+			var nums = cards[key].cardNum;
+			cardNumValArray.push(nums);
+		} 
+		console.log("this is the length", cardNumValArray.length);
+
+		dealNineCards();
+	}
+
+	startGame();
+
+	// reset
+	$resetBtn = $("#reset-btn");
+	$resetBtn.on("click", function (e) {
+		e.preventDefault();
+		location.reload();
+		startGame();
+
+	})
 
 	var $select = $(".card"); 
 	var cardSet = [];
 
+	//click on cards to compare	 
 	var counter = 0;
 	$select.on("click", function() {
-			// select card
-			$(this).toggleClass("selected");
-			// push data bound on html to array for parsing
-			cardSet.push(this);
-			console.log(cardSet);
+		// select card
+		$(this).toggleClass("selected");
+		$(this).addClass("clicked");
+		// push data bound on html to array for parsing
+		cardSet.push(this);
+		console.log(cardSet);
 		if (counter < 2) {
 			counter++;
 		} else {
@@ -90,19 +92,21 @@ $(document).ready(function() {
 			console.log(card1AttrFill);
 			console.log(card1AttrColor);
 
+			// win logic
 			var shapeCheck = checkShape(card1AttrShape, card2AttrShape, card3AttrShape);
 			console.log(shapeCheck);
 			var fillCheck = checkFill(card1AttrFill, card2AttrFill, card3AttrFill);
 			var colorCheck = checkColor(card1AttrColor, card2AttrColor, card3AttrColor);
 			var setCheck = checkSet(shapeCheck, colorCheck, fillCheck, true);
 			var winCheck = checkWin(setCheck);
-
+			// clear
 			$select.removeClass("selected");
 			counter = 0;
 			cardSet = [];
 			console.clear();
 		}
+	
 	})
-	// compare 3 cards by clicking
+
 }) //jquery end
 

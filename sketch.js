@@ -1,9 +1,48 @@
-_____________________
-questions
+TO DO:
+deploy
+btn style
+prevent click again
+hover?
+center tittles
+RULES
 
-how to link loca .json file
 
-how to crate protoype for obj in JQUERY
+
+
+extras
+
+save to local storage / high score
+
+set counter
+
+	add multiple shapes
+
+		add reset button,
+
+deal three new cards
+	use jquery to append new cards divs
+
+remove set from deck 
+
+hover
+cursoe
+color
+shading
+more shading
+
+center
+
+
+html disable attr
+	add clicked class
+
+remove profanity
+
+// fix bug
+
+add style
+
+
 
 
 // want it to work to on mobile too
@@ -54,7 +93,6 @@ function Card(shape, fill, number, color) {
 	this.color = color
 	// position: row#/col#
 	// card#: xx/81
-
 }
 
 // an example of a set 
@@ -114,10 +152,7 @@ They all have the same shape, or they have three different shape.
 They all have the same number, or they have three different numbers.
 They all have the same fill, or they have three different fill.
 
-
 */
-
-
 
 function removeCards () {
 	// remove winning set
@@ -326,7 +361,31 @@ cardOne.checkWin(
 	)
 );
 
+	// grab cards by id
+	var card1 = document.getElementById('r1-c1'),
+	    card2 = document.getElementById('r1-c2'),
+	    card3 = document.getElementById('r1-c3'),
+	    card4 = document.getElementById('r2-c1'),
+	    card5 = document.getElementById('r2-c2'),
+	    card6 = document.getElementById('r2-c3'),
+	    card7 = document.getElementById('r3-c1'),
+	    card8 = document.getElementById('r3-c2'),
+	    card9 = document.getElementById('r3-c3');
 
+
+	    // var cardIdArray = 
+	 // grab cards data obj from html
+ 	// var card1Dom = cards[card1.dataset.card],
+		// card2Dom = cards[card2.dataset.card],
+		// card3Dom = cards[card3.dataset.card],
+		// card4Dom = cards[card4.dataset.card],
+		// card5Dom = cards[card5.dataset.card],
+		// card6Dom = cards[card6.dataset.card],
+		// card7Dom = cards[card7.dataset.card],
+		// card8Dom = cards[card8.dataset.card],
+		// card9Dom = cards[card9.dataset.card];
+
+	// console.log(cards[card1.dataset.card]);
 */
 
 

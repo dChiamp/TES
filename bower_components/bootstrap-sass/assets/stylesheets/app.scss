@@ -1,22 +1,13 @@
-
 // color variables:
 $red: #FF2B00;
 $blue: #00D5FF;
 $green: #55FF00;
 $selected: grey;
 
-
-// shape classes
-// want to apply color classes to each shape
-// other options: make classes for each color and fill
-// ex: red square solid, red square empty, red square striped
-// red triangle solid, red triangle empty, red triangle striped
-// red circle solid, red circle empty, red circle striped
-
 // shape mixins
 @mixin square {
 	float: none;
-	margin: 10% auto;
+	margin: 50% auto;
 	width: 100px;
 	height: 100px;
 }
@@ -24,7 +15,7 @@ $selected: grey;
 @mixin circle {
 
 	float: none;
-	margin: 10% auto;
+	margin: 50% auto;
 	width: 100px;
 	height: 100px;
 	-moz-border-radius: 50px;
@@ -35,7 +26,7 @@ $selected: grey;
 
 @mixin parallelogram {
 	margin-left: 20%;
-	margin-top:10%;
+	margin-top:50%;
 	width: 120px;
 	height: 70px;
 	-webkit-transform: skew(20deg);
@@ -47,10 +38,6 @@ $selected: grey;
 @mixin solid ($color) {
 	background: $color;
 }
-
-// @mixin solid-red {
-// 	background: $red;
-// }
 
 
 @mixin empty($color) {
@@ -70,10 +57,26 @@ body {
 	background: lightgrey;
 	text-align: center;
 	background-image: url("../../../../space2.jpg");
+
+}
+
+header{
+
 }
 
 h1 {
-	margin-bottom: 100px;
+	text-align: center;
+	margin-top: 5%;
+	margin-right: 5%;
+	font-size: 500%;
+	color:white;
+}
+
+a {
+	text-align: center;
+	font-size: 36px;
+	padding-bottom: 5%;
+	padding-right: 4%
 }
 
 // .col-xs-4 {
@@ -86,6 +89,19 @@ h1 {
 	// background: $blue;
 }
 
+#reset-btn{
+	border-radius: 10px;
+	opacity: 0.4;
+	margin: 2% 4% 2% 0;
+	color:white;
+	background-color: lightblue;
+	padding: 15px 32px;
+	font-size: 32px;
+}
+
+#reset-btn:hover {
+	background-color: red;
+}
 .card {
 	height: 300px;
 	width: 200px;
@@ -94,12 +110,14 @@ h1 {
 	text-align: center;
 	background-color: white;
 	margin-bottom: 25px;
+	box-shadow: 5px 5px 5px black;
 }
 
-// color classes 
-	
+.card:hover {
+	background-color:lightgrey;
+	cursor: pointer;
+}
 
-// classes
 // shapes
 .square {
 	@include square;
@@ -113,12 +131,7 @@ h1 {
 	@include parallelogram;
 }
 
-// fills
-
-// how to dynamically include colors?
-// .solid-red {
-// 	@include solid-red;
-// }
+// fills, color classes 
 
 .stripes-red{
 	@include stripes ($red);	
@@ -161,52 +174,6 @@ h1 {
 }
 
 
-
-// .empty {
-// 	.red{
-// 		@include empty ($red);	
-// 	}
-// 	.blue {
-// 		@include empty ($blue);
-// 	}
-// 	.green {
-// 		@include empty ($green);
-// 	}
-// }
-
-// .red {
-// 	background: $red;
-// }
-
-// .green {
-// 	background: $green;
-// }
-
-// .blue {
-// 	background: $blue;
-// }
-
-// colors
-// .triangle-color{
-// 	@include triangle-color($blue);
-// }
-
-
-
-
-
-// change card color when selected
 .selected {
 	background: $selected;
 }
-
-// .color
-
-// .shape
-
-// .fill
-
-// .number, probs need to write a function
-
-
-
