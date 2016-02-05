@@ -1,8 +1,10 @@
+
 // color variables:
 $red: #FF2B00;
 $blue: #00D5FF;
 $green: #55FF00;
 $selected: grey;
+
 
 // shape classes
 // want to apply color classes to each shape
@@ -67,6 +69,7 @@ body {
 	font-family: Helvetica;
 	background: lightgrey;
 	text-align: center;
+	background-image: url("../../../../space2.jpg");
 }
 
 h1 {

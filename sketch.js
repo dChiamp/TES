@@ -1,3 +1,11 @@
+_____________________
+questions
+
+how to link loca .json file
+
+how to crate protoype for obj in JQUERY
+
+
 // want it to work to on mobile too
 // good project to use bootstrap and SASS
 // def get some CSS3 animations poppin off
@@ -109,33 +117,6 @@ They all have the same fill, or they have three different fill.
 
 */
 
-// card object instances
-/*
-	cardFour = new Card(cards.card4.cardNum, 
-						cards.card4.shape, 
-						cards.card4.fill,
-						cards.card4.shapeNum,
-						cards.card4.color
-					);
-
-	cardFive = new Card(cards.card5.cardNum, 
-						cards.card5.shape, 
-						cards.card5.fill,
-						cards.card5.shapeNum,
-						cards.card5.color
-					);
-	cardSix = new Card(cards.card6.cardNum, 
-						cards.card6.shape,
-						cards.card6.fill,
-						cards.card6.shapeNum,
-						cards.card6.color
-					);
-*/
-
-
-
-
-
 
 
 function removeCards () {
@@ -187,16 +168,166 @@ function bindData (cardDom, cardObj){
 	// $card1.data = cards.card1;
 	// console.log($card1.data);
 
-_____________________
-questions
-
-how to link loca .json file
-
-how to crate protoype for obj in JQUERY
 
 
+/*
+LOG THAT FOUND ELEMENTS
+(anonymous function) @ VM14084:2InjectedScript._evaluateOn @ VM13941:875InjectedScript._evaluateAndWrap @ VM13941:808InjectedScript.evaluate @ VM13941:664
+cardSet[0].dataset.card
+undefined
+cardSet[0].getAttribute("data-card")
+null
+cardSet[0].getAttribute("card")
+null
+cardSet[0].getAttribute("data")
+null
+$cardSet[0].getAttribute("data-card")
+VM14186:2 Uncaught ReferenceError: $cardSet is not defined(…)(anonymous function) @ VM14186:2InjectedScript._evaluateOn @ VM13941:875InjectedScript._evaluateAndWrap @ VM13941:808InjectedScript.evaluate @ VM13941:664
+$(cardSet[0]).attr("data-card");
+undefined
+$(cardSet[0]).find(".square")
+[<div id=​"r1-c1" data-card=​"card1" class=​"square solid-red red">​ ​</div>​]
+$(cardSet[0]).find(".square").attr("data-card")
+"card1"
+$(cardSet[0]).children
+(c,d){var e=n.map(this,b,c);return"Until"!==a.slice(-5)&&(d=c),d&&"string"==typeof d&&(e=n.filter(d,e)),this.length>1&&(E[a]||n.uniqueSort(e),D.test(a)&&e.reverse()),this.pushStack(e)}
+$(cardSet[0]).children()
+[<div id=​"r1-c1" data-card=​"card1" class=​"square solid-red red">​ ​</div>​]
+$(cardSet[0]).children().attr("data-card")
+"card1"
+$(cardSet[0]).children().attr("class")
+"square solid-red red"
 
 
+
+
+**********ORINGAL OOP IDEAS***********
+/*
+Card.prototype = {
+	// addShape: function addShape (shape) {
+	// 	this.class(shape);
+	// },
+	displayCard: function () {
+		console.log(this.shape);
+		console.log(this.fill);
+		console.log(this.color);
+		console.log(this.number);
+	},
+	checkShape: function (cardTwo, cardThree) {
+		if (this.shape != cardTwo.shape && this.shape != cardThree.shape) {
+			console.log("the shapes are all different");
+			return true;
+		} else if (this.shape == cardTwo.shape && this.shape == cardThree.shape ) {
+			console.log("the shapes are all the same");
+			return true;
+		} else {
+			console.log("cant be set, two shapes are the same");
+			return false;
+		}
+	},
+	checkFill: function (cardTwo, cardThree) {
+		if (this.fill != cardTwo.fill && this.fill != cardThree.fill) {
+			console.log("the fills are all different");
+			return true;
+		} else if (this.fill == cardTwo.fill && this.fill == cardThree.fill ) {
+			console.log("the fills are all the same");
+			return true;
+		} else {
+			console.log("cant be set, two fills are the same");
+			return false;
+		}
+	},
+	checkColor: function (cardTwo, cardThree) {
+		if (this.color != cardTwo.color && this.color != cardThree.color) {
+			console.log("the colors are all different");
+			return true;
+		} else if (this.color == cardTwo.color && this.color == cardThree.color ) {
+			console.log("the colors are all the same");
+			return true;
+		} else {
+			console.log("cant be set, two colors are the same");
+			return false;
+		}
+	},
+	checkNumber: function (cardTwo, cardThree) {
+		if (this.number != cardTwo.number && this.number != cardThree.number) {
+			console.log("the numbers are all different");
+			return true;
+		} else if (this.number == cardTwo.number && this.number == cardThree.number ) {
+			console.log("the numbers are all the same");
+			return true;
+		} else {
+			console.log("cant be set, two numbers are a shape");
+			return false;
+		}
+	},
+	checkSet: function  (shape,fill,color,number) {
+	    if (shape == true && fill == true && color == true && number == true){
+            console.log("set!!!")
+            return true;
+        } else {
+            console.log("not a set")
+            return false;
+	    }
+	},
+	checkWin: function (checkSet) {
+		if (checkSet == true) {
+			console.log("it's a fucking set!");
+			alert("it's a fucking set!");
+			return true;
+		} else {
+			console.log("not a set, you idiot");
+			alert("not a set, you idiot");
+			return false;
+		}
+	}
+}
+	// var cardOne = new Card(1, "square", "solid", 1, "red");
+	// create a foreach function?
+
+function instantiateCards() {
+var attributesArray = []
+	for (var key in cards) {
+		// console.log(cards[key])
+		var obj2 = cards[key]
+		var obj3 = cards[key].cardNum;
+		console.log(obj3)
+		for (var k in obj2){
+			var attr = obj2[k];
+			// console.log(obj2[k]);
+			// console.log(obj2.cardNum)
+			// var tmp = cardOne.cards[key].obj2[k];
+			// console.log(tmp)
+			attributesArray.push(attr);
+		}
+	}
+console.log(attributesArray);
+}
+
+instantiateCards();
+*/
+
+// How do this programatically
+
+// function readDomCard (Obj){
+// 	for (var key in Obj) {
+// 		console.log(Obj[key]);
+// 	};
+// }
+// readDomCard(cards.card1);
+
+/*
+cardOne.checkWin(
+	cardOne.checkSet(
+		cardOne.checkShape(cardTwo, cardThree),
+		cardOne.checkFill(cardTwo, cardThree),
+		cardOne.checkNumber(cardTwo, cardThree),
+		cardOne.checkColor(cardTwo, cardThree)
+	)
+);
+
+
+*/
 
 
 
