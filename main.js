@@ -58,6 +58,8 @@ $(document).ready(function() {
 	var cardSet = [];
 
 	//click on cards to compare	 
+
+	// somewhere in here is prob where to limit the clicks
 	var counter = 0;
 	$select.on("click", function() {
 		// $(e.target).off()
