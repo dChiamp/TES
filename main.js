@@ -94,10 +94,10 @@ $(document).ready(function() {
 			console.log(card1AttrColor);
 
 			// win logic
-			var shapeCheck = checkShape(card1AttrShape, card2AttrShape, card3AttrShape);
+			var shapeCheck = checkDimension(card1AttrShape, card2AttrShape, card3AttrShape);
 			console.log(shapeCheck);
-			var fillCheck = checkFill(card1AttrFill, card2AttrFill, card3AttrFill);
-			var colorCheck = checkColor(card1AttrColor, card2AttrColor, card3AttrColor);
+			var fillCheck = checkDimension(card1AttrFill, card2AttrFill, card3AttrFill);
+			var colorCheck = checkDimension(card1AttrColor, card2AttrColor, card3AttrColor);
 			var setCheck = checkSet(shapeCheck, colorCheck, fillCheck, true);
 			var winCheck = checkWin(setCheck);
 			// clear
