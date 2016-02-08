@@ -1,4 +1,4 @@
-$(document).ready(function() { 
+$(document).ready(function() {
 	// DOM STUFF
 
 	// grab cards on page by ids
@@ -15,13 +15,13 @@ $(document).ready(function() {
 		cardEl.addClass(color);
 	}
 
-	var boardSpotArr = [$card1, $card2, $card3, 
-						$card4, $card5, $card6, 
+	var boardSpotArr = [$card1, $card2, $card3,
+						$card4, $card5, $card6,
 						$card7, $card8, $card9];
 
 	// to get length
 	var cardNumValArray = [];
-	
+
 	function dealNineCards () {
 		for (i=0; i<9; i++){
 			var rando = Math.floor(Math.random() * cardNumValArray.length);
@@ -29,7 +29,7 @@ $(document).ready(function() {
 			var cardNumStr = cardNumValArray[rando];
 			var cardData = cards[cardNumStr];
 
-			renderCard(boardSpotArr[i], cardData.cardNum, cardData.shape, 
+			renderCard(boardSpotArr[i], cardData.cardNum, cardData.shape,
 						cardData.fill, cardData.shapeNum, cardData.color);
 		}
 	}
@@ -38,7 +38,7 @@ $(document).ready(function() {
 		for (var key in cards) {
 			var nums = cards[key].cardNum;
 			cardNumValArray.push(nums);
-		} 
+		}
 		console.log("this is the length", cardNumValArray.length);
 
 		dealNineCards();
@@ -54,14 +54,15 @@ $(document).ready(function() {
 		startGame();
 	})
 
-	var $select = $(".card"); 
+	var $select = $(".card");
 	var cardSet = [];
 
-	//click on cards to compare	 
+	//click on cards to compare
 
 	// somewhere in here is prob where to limit the clicks
 	var counter = 0;
-	$select.on("click", function() {
+	//ONE vs ON allows only one click, not multiple clicks on the same card
+	$select.one("click", function() {
 		// $(e.target).off()
 		// select card
 		$(this).toggleClass("selected");
@@ -69,7 +70,7 @@ $(document).ready(function() {
 		// push data bound on html to array for parsing
 		cardSet.push(this);
 		console.log(cardSet);
-		if (counter < 2) {
+		if(counter < 2) {
 			counter++;
 		} else {
 			// parse array of objs for each click
@@ -108,4 +109,3 @@ $(document).ready(function() {
 		}
 	})
 }) //jquery end
-
